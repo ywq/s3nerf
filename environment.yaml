@@ -1,0 +1,35 @@
+name: s3nerf
+channels:
+  - pytorch
+  - conda-forge
+  - anaconda
+  - defaults
+dependencies:
+  - python
+  - pytorch=1.8.0 
+  - torchvision 
+  - torchaudio 
+  - cudatoolkit=11.1
+  - cffi
+  - cython
+  - imageio=2.9.0
+  - numpy
+  - scipy
+  - matplotlib
+  - pandas
+  - tensorboard
+  - yaml
+  - pillow=8.2.0
+  - wheel
+  - pip
+  - tqdm
+  - pip:
+    - ipdb
+    - ipython==7.24.0
+    - ipython-genutils
+    - jedi
+    - opencv-python
+    - scikit-image
+    - pyyaml
+    - trimesh
+    - lpips

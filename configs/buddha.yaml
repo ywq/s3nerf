@@ -1,0 +1,53 @@
+model:
+  num_layers: 8
+  hidden_dim: 256
+  octaves_pe: 6
+  octaves_pe_views: 4
+  skips: [4]
+  geometric_init: True
+  feat_size: 256
+  rescale: 1.0
+  light_int: 4
+rendering:
+  type: unisurf
+  n_max_network_queries: 64000
+  white_background: True
+  near: 1
+  far : 20
+  radius: 6.0
+  interval_start: 3.0 
+  interval_end: 3.0
+  interval_decay: 0.000015
+  num_points_in: 64
+  num_points_out: 32
+  ray_marching_steps: 256
+  vis_after: True
+  vis_after_iter: 1000
+  render_fine: True
+  render_fine_iter: 5000
+  # no_vis: True
+  vis_steps: 256
+dataloading:
+  data_dir: dataset
+  batchsize: 1
+  n_workers: 8
+  obj_name : buddha
+training:
+  type: unisurf
+  out_dir:  out/buddha/test_1/
+  n_training_points: 2048
+  batch_size: 1
+  learning_rate: 0.0002
+  weight_decay: 0.0
+  scheduler_milestones: [200, 400, 800]
+  scheduler_gamma: 0.5
+  visualize_every: 10000
+  print_every: 200
+  backup_every: 10000
+  checkpoint_every: 5000
+  lambda_l1_rgb: 1.0
+  lambda_normals: 0.005
+extraction:
+  refinement_step: 0
+  upsampling_steps: 3
+  resolution: 64
